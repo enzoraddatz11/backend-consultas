@@ -1,9 +1,11 @@
 package com.fiap.ec.backend_consultas.service;
 
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
 import com.fiap.ec.backend_consultas.model.Medico;
 import com.fiap.ec.backend_consultas.repository.MedicoRepository;
-import org.springframework.stereotype.Service;
-import java.util.List;
 
 @Service
 public class MedicoService {
@@ -33,6 +35,7 @@ public class MedicoService {
         medicoExistente.setCrm(medicoAtualizado.getCrm());
         medicoExistente.setEspecialidade(medicoAtualizado.getEspecialidade());
         medicoExistente.setAtivo(medicoAtualizado.getAtivo());
+        medicoExistente.setValorConsulta(medicoAtualizado.getValorConsulta());
         return repository.save(medicoExistente);
     }
 
